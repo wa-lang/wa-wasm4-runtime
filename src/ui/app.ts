@@ -142,7 +142,7 @@ export class App extends LitElement {
             },
         };
         if (constants.GAMEDEV_MODE) {
-            devtoolsManager = await import('@wasm4/web-devtools').then(({ DevtoolsManager}) => new DevtoolsManager());
+            // devtoolsManager = await import('@wasm4/web-devtools').then(({ DevtoolsManager}) => new DevtoolsManager());
         }
 
         if (!this.netplay) {

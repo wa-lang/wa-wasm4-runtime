@@ -114,7 +114,7 @@ export class Runtime {
     }
 
     async load (wasmBuffer: Uint8Array, enforceSizeLimit = true) {
-        const limit = 1 << 16;
+        const limit = 1 << 20;
         this.wasmBuffer = wasmBuffer;
         this.wasmBufferByteLen = wasmBuffer.byteLength;
         this.wasm = null;

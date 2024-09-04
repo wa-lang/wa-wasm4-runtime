@@ -1,3 +1,4 @@
 /dist
 public/cart.wasm
 src/**/*.generated.js
+node_modules

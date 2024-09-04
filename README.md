@@ -1,14 +1,14 @@
-This directory contains the web runtime.
+# 凹语言定制的 WASM4 运行时
 
-## Development
+基于 https://github.com/aduros/wasm4/tree/main/runtimes/web 定制.
 
-First run `npm run install-devtools` to build `@wasm4/web-devtool`.
-Then run `npm install` to install dependencies.
+变化部分:
 
-For quick development run `npm start` and navigate to http://localhost:3000.
-You will also need to place a test cartridge in public/cart.wasm.
+- 取消 WASM 文件的 64KB 大小限制
 
-You can create a cartridge with the `w4` tool. You can build that in the `cli`
-directory with `npm install`, then just run the `cli.js` file.
+构建测试流程:
 
-Run `npm run build` to build a release build, which is used by the website and the `w4` CLI.
+1. `npm install` 安装依赖
+2. `npm run build:slim` 构建目标, 在 dist 目录
+3. 将游戏WASM模块放到 `dist/cart.wasm` 文件
+4. 在 dist 目录启动 Web 服务, 打开网页浏览

@@ -1,6 +1,7 @@
 import { UserConfig, defineConfig } from 'vite';
-import minifyHTML from 'rollup-plugin-minify-html-literals-v3';
-import cliPackageJSON from '../../cli/package.json';
+
+// import cliPackageJSON from '../../cli/package.json';
+const cliPackageJSON_version = '2.7.0';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -36,14 +37,10 @@ export default defineConfig(({ mode }) => {
           },
         },
       },
-      minify: "terser",
     },
-    plugins: [
-        minifyHTML(),
-    ],
     define: {
       WASM4_GAMEDEV_MODE: gamedev_build,
-      WASM4_VERSION: JSON.stringify(cliPackageJSON.version),
+      WASM4_VERSION: JSON.stringify(cliPackageJSON_version),
     },
   };
 
